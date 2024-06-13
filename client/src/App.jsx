@@ -1,12 +1,15 @@
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Route, Routes } from "react-router-dom";
+import { Home, PublicLayout } from "./pages/public";
+import path from "./utils/path";
 
 function App() {
-    return (
-        <>
-            <h1 className="text-red-500">Vite + React</h1>
-        </>
-    );
+  return (
+    <Routes>
+      <Route path={path.PUBLIC_LAYOUT} element={<PublicLayout />}>
+        <Route path={path.HOME} element={<Home />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;
